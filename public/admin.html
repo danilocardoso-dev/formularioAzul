@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#006bb6" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Painel administrativo | Azul Cargo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="admin-body">
+    <main class="admin-shell">
+      <section id="login-view" class="login-card">
+        <div class="brand-lockup brand-lockup--dark">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span><strong>azul</strong><small>CARGO EXPRESS</small></span>
+        </div>
+        <span class="step-label">ÁREA RESTRITA</span>
+        <h1>Painel administrativo</h1>
+        <p>Acesse para visualizar e exportar os cadastros.</p>
+        <form id="login-form" novalidate>
+          <label for="usuario">Usuário</label>
+          <input id="usuario" name="usuario" autocomplete="username" required />
+          <label for="senha">Senha</label>
+          <input id="senha" name="senha" type="password" autocomplete="current-password" required />
+          <button type="submit">Entrar <span aria-hidden="true">→</span></button>
+          <div id="login-message" class="message" role="status" aria-live="polite"></div>
+        </form>
+      </section>
+
+      <section id="dashboard-view" class="dashboard" hidden>
+        <header class="admin-header">
+          <div>
+            <span class="step-label">PAINEL ADMINISTRATIVO</span>
+            <h1>Cadastros recebidos</h1>
+            <p>Acompanhe os contatos e baixe uma cópia completa dos dados.</p>
+          </div>
+          <div class="admin-actions">
+            <a class="button-secondary" href="/api/admin/cadastros/download">Baixar JSON</a>
+            <button id="logout-button" class="button-ghost" type="button">Sair</button>
+          </div>
+        </header>
+
+        <div class="summary-card">
+          <span>Total de cadastros</span>
+          <strong id="total-cadastros">0</strong>
+          <small>registros disponíveis</small>
+        </div>
+
+        <div class="table-card">
+          <div class="table-toolbar">
+            <label for="busca" class="sr-only">Buscar cadastro</label>
+            <input id="busca" type="search" placeholder="Buscar por nome, telefone ou empresa" />
+            <button id="refresh-button" class="button-ghost" type="button">Atualizar</button>
+          </div>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th>Nome</th><th>Telefone</th><th>Empresa</th><th>Data</th></tr></thead>
+              <tbody id="cadastros-list"></tbody>
+            </table>
+            <div id="empty-state" class="empty-state" hidden>Nenhum cadastro encontrado.</div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="/admin.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#006bb6" />
+    <meta name="description" content="Cadastro rápido de contatos e empresas." />
+    <title>Cadastro | Azul Cargo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="brand-panel" aria-label="Apresentação">
+        <div class="brand-lockup">
+          <span class="brand-mark" aria-hidden="true">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </span>
+          <span><strong>azul</strong><small>CARGO EXPRESS</small></span>
+        </div>
+
+        <div class="hero-copy">
+          <span class="eyebrow">Conexões que movimentam</span>
+          <h1>Vamos começar uma nova parceria?</h1>
+          <p>Preencha seus dados. É rápido, seguro e leva menos de um minuto.</p>
+        </div>
+
+        <div class="trust-row">
+          <span class="trust-icon" aria-hidden="true">✓</span>
+          <span>Seus dados serão usados apenas para contato comercial.</span>
+        </div>
+      </section>
+
+      <section class="form-panel">
+        <div class="form-card">
+          <span class="step-label">CADASTRO</span>
+          <h2>Conte um pouco sobre você</h2>
+          <p class="form-intro">Nossa equipe entrará em contato pelos dados informados.</p>
+
+          <form id="cadastro-form" novalidate>
+            <label for="nome">Nome completo</label>
+            <div class="input-wrap">
+              <span aria-hidden="true">♙</span>
+              <input id="nome" name="nome" type="text" autocomplete="name" maxlength="120" placeholder="Como podemos chamar você?" required />
+            </div>
+
+            <label for="telefone">Telefone / WhatsApp</label>
+            <div class="input-wrap">
+              <span aria-hidden="true">⌕</span>
+              <input id="telefone" name="telefone" type="tel" inputmode="tel" autocomplete="tel" maxlength="19" placeholder="(00) 00000-0000" required />
+            </div>
+
+            <label for="empresa">Empresa</label>
+            <div class="input-wrap">
+              <span aria-hidden="true">▦</span>
+              <input id="empresa" name="empresa" type="text" autocomplete="organization" maxlength="120" placeholder="Nome da sua empresa" required />
+            </div>
+
+            <button type="submit">
+              <span>Finalizar cadastro</span>
+              <span aria-hidden="true">→</span>
+            </button>
+            <div id="form-message" class="message" role="status" aria-live="polite"></div>
+          </form>
+
+          <p class="privacy-note"><span aria-hidden="true">▣</span> Seus dados estão protegidos e não serão compartilhados.</p>
+        </div>
+      </section>
+    </main>
+    <script src="/app.js" defer></script>
+  </body>
+</html>
